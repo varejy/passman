@@ -1,0 +1,11 @@
+.header {
+    background: #3d3d3d url('../../../assets/img/classy-fabric.png');
+    border-bottom: 1px solid #ff7701;
+    margin-bottom: 1rem;
+}
+.key {
+    text-shadow: 1px 1px black;
+}
+.title, .key {
+    color: #6f6e6e;
+}

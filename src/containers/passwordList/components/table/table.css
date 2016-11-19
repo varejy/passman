@@ -1,0 +1,41 @@
+
+.head, .row {
+    padding: 0.5rem;
+    display: table;
+    width: 100%;
+}
+.cell {
+    vertical-align: top;
+    display: table-cell;
+    overflow: hidden;
+    &:first-child {
+        width: 29%;
+    }
+    &:nth-child(2) {
+        width: 48%;
+    }
+    &:nth-child(3) > div {
+        float: right;
+       
+    }
+    &:nth-child(3) > div > a {
+        vertical-align: top;
+    }
+}
+.cell > .content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    position: absolute;
+    padding: .5rem 0;
+}
+.body {
+    overflow: hidden;
+    padding-right: 0.2rem;
+}
+.scroll {
+    height: 99%;
+    overflow: hidden;
+    overflow-y: auto;
+}

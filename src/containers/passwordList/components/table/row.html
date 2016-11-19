@@ -1,0 +1,14 @@
+<div class="{{::$ctrl.styles.row}} {{::$ctrl.rowStyle}}">
+    <div class="{{::$ctrl.styles.cell}}">
+        <div class="{{::$ctrl.styles.content}}">{{$ctrl.data.label}}</div>
+    </div>
+    <div class="{{::$ctrl.styles.cell}}">
+        <div class="{{::$ctrl.styles.content}}">{{$ctrl.data.description}}</div>
+    </div>
+    <div class="{{::$ctrl.styles.cell}}">
+        <div>
+            <a class="ui left inverted blue basic attached button mini" href="{{$ctrl.editLink}}">Edit</a>
+            <button class="right inverted red basic attached ui button mini" ng-click="$ctrl.remove()">Remove</button>
+        </div>
+    </div>
+</div>

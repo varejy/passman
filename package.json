@@ -1,0 +1,46 @@
+{
+  "name": "passman",
+  "version": "1.0.0",
+  "description": "\"Password manager\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "./node_modules/.bin/gulp default"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "browser-sync-webpack-plugin": "^1.1.3",
+    "css-loader": "^0.25.0",
+    "del": "^2.2.2",
+    "exports-loader": "^0.6.3",
+    "file-loader": "^0.9.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-util": "^3.0.7",
+    "imports-loader": "^0.6.5",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-loader": "^1.1.1",
+    "raw-loader": "^0.5.1",
+    "rucksack-css": "^0.8.6",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^1.2.1",
+    "typescript": "^2.0.10",
+    "url-loader": "^0.5.7",
+    "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "express": "^4.14.0",
+    "lodash": "^4.17.2",
+    "normalize.css": "^5.0.0",
+    "semantic-ui-button": "^2.2.3",
+    "semantic-ui-header": "^2.2.3",
+    "semantic-ui-icon": "^2.2.3",
+    "semantic-ui-input": "^2.2.3",
+    "semantic-ui-label": "^2.2.3"
+  }
+}
