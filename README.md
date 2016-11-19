@@ -12,6 +12,7 @@
 ### Usage
 
 ```
+git clone https://github.com/bugaro/passman.git
 cd passman
 npm install
 typings install
