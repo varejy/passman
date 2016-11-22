@@ -1,7 +1,7 @@
-var express    = require('express');
-var app        = express();
-var rootDir    = __dirname;
-var port       = process.env.PORT || 3000;
+var express = require('express');
+var app     = express();
+var rootDir = __dirname;
+var port    = process.env.PORT || 3000;
 
 app.use(express.static(rootDir + '/node_modules'));
 app.use(express.static(rootDir + '/dist'));
