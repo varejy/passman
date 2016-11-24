@@ -1,4 +1,4 @@
-import * as angular        from 'angular';
+import 'angular';
 import { FakeDB, IFakeDB } from '../../shared/services/fakedb';
 
 const MODULE_NAME = 'layout.container';

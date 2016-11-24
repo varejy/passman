@@ -1,4 +1,4 @@
-import * as angular from 'angular';
+import 'angular';
 
 const MODULE_NAMES = {
     head: 'head.component',

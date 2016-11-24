@@ -1,4 +1,4 @@
-import * as angular from 'angular';
+import 'angular';
 import { FakeDB } from './FakeDB';
 
 const MODULE_NAME = 'fakedb.service';
