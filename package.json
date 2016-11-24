@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "./node_modules/.bin/gulp default"
+    "dev": "./node_modules/.bin/gulp default",
+    "test": "./node_modules/.bin/gulp test"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "angular-mocks": "^1.5.8",
     "babel-core": "^6.18.2",
     "babel-preset-es2015": "^6.18.0",
     "browser-sync": "^2.18.1",
@@ -21,6 +23,12 @@
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-util": "^3.0.7",
     "imports-loader": "^0.6.5",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-spec-reporter": "0.0.26",
+    "karma-typescript": "^2.1.3",
     "postcss-cssnext": "^2.8.0",
     "postcss-loader": "^1.1.1",
     "raw-loader": "^0.5.1",

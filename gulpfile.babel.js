@@ -5,6 +5,7 @@ import webpack       from 'webpack-stream';
 import webpackConfig from './webpack.config';
 import BS            from 'browser-sync-webpack-plugin';
 import del           from 'del';
+import karma         from 'karma';
 
 webpackConfig.watch = true;
 webpackConfig
@@ -38,9 +39,14 @@ function bundle() {
 function clean() {
     return del(['./dist/**'])
 }
+function test(done) {
+    new karma.Server({
+    configFile: __dirname + '/karma.conf.js'
+  }, () => done()).start();
+}
 
-gulp.task('default', gulp.series(clean, bundle)
-);
+gulp.task('default', gulp.series(clean, bundle));
+gulp.task('test', gulp.series(test));
 
 
 
