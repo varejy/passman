@@ -1,26 +1,33 @@
+var rootPath   = __dirname;
+var wpkconfig  = require('./webpack/config')(rootPath);
+var wpkloaders = require('./webpack/loaders');
+
+wpkconfig
+  .module
+  .loaders = wpkloaders.test(rootPath);
 
 module.exports = function(config) {
   config.set({
 
     basePath: '',
 
-    frameworks: ['jasmine', 'karma-typescript'],
+    frameworks: ['jasmine'],
 
-    files: [
-      './node_modules/angular/angular.min.js',
-      './node_modules/angular-route/angular-route.min.js',
-      './node_modules/angular-mocks/angular-mocks.js',
-      './src/shared/services/fakedb/*.ts'
-    ],
+    files: ['./src/**/*.spec.ts'],
 
-    exclude: [
-    ],
+    exclude: [],
 
     preprocessors: {
-      '**/*.ts': ['karma-typescript']
+      '**/*.ts': ['webpack', 'sourcemap']
     },
 
-    reporters: ['spec', 'karma-typescript'],
+     webpack: wpkconfig,
+
+    webpackServer: {
+      noInfo: true // prevent console spamming when running in Karma!
+},
+
+    reporters: ['spec'],
 
     specReporter: {
       maxLogLines: 5,         // limit number of lines logged per test

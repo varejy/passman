@@ -1,22 +1,37 @@
 'use strict';
-import gulp          from 'gulp';
-import gutil         from 'gulp-util';
-import webpack       from 'webpack-stream';
-import webpackConfig from './webpack.config';
-import BS            from 'browser-sync-webpack-plugin';
-import del           from 'del';
-import karma         from 'karma';
+import gulp       from 'gulp';
+import gutil      from 'gulp-util';
+import wpkstream  from 'webpack-stream';
+import wpkconfig  from './webpack/config';
+import wpkloaders from './webpack/loaders';
+import BS         from 'browser-sync-webpack-plugin';
+import del        from 'del';
+import karma      from 'karma';
 
-webpackConfig.watch = true;
-webpackConfig
+const rootPath = __dirname;
+const webpack  = {
+    dev : Object.create(wpkconfig(rootPath)),
+    test: Object.create(wpkconfig(rootPath))
+};
+
+webpack.dev
+    .watch = true;
+    
+webpack.dev
     .output
     .filename = 'bundle.js';
-webpackConfig
+
+webpack.dev
     .externals = { 
         'angular': 'angular',
         'lodash' : '_'
     };
-webpackConfig
+
+webpack.dev
+    .module
+    .loaders = wpkloaders.dev(rootPath);
+
+webpack.dev
     .plugins
     .push(
         new BS({
@@ -24,21 +39,22 @@ webpackConfig
             port: 4000,
             open: false,
             server: {
-                baseDir: ['./','./dist', './node_modules'],
-                
-        }
+                baseDir: ['./','./dist', './node_modules']      
+            }
         })
     );
 
+
 function bundle() {
     return gulp.src('./src/index.ts')
-        .pipe(webpack(webpackConfig))
+        .pipe(wpkstream(webpack.dev))
         .pipe(gulp.dest('dist'))
 };
 
 function clean() {
     return del(['./dist/**'])
 }
+
 function test(done) {
     new karma.Server({
     configFile: __dirname + '/karma.conf.js'
@@ -46,7 +62,7 @@ function test(done) {
 }
 
 gulp.task('default', gulp.series(clean, bundle));
-gulp.task('test', gulp.series(test));
+gulp.task('test', test);
 
 
 
