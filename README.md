@@ -19,5 +19,10 @@ typings install
 npm run dev
 open http://localhost:4000
 ```
+### Test
+
+```
+npm test
+```
 
 
