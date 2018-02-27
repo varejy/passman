@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/favicon.ico',function(req,res){
-    res.sendFile(rootDir + '/favicon.png')
+    res.sendFile(rootDir + '/favicon.ico')
 });
 
 app.listen(port, function () {
