@@ -10,6 +10,10 @@ app.get('/', function (req, res) {
     res.sendFile(rootDir + '/index.html')
 });
 
+app.get('/favicon.ico',function(req,res){
+    res.sendFile(rootDir + '/favicon.png')
+});
+
 app.listen(port, function () {
     console.log('Server started on port: ' + port)
 })
